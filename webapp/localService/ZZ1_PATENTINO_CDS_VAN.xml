@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zz1_patentino_cds/$metadata">
+        <edmx:Include Namespace="ZZ1_PATENTINO_CDS" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zz1_patentino_cds_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/SAP_UUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/CLIENTE"/>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/NOMECLIENTE"/>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/NOME"/>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/INDIRIZZO"/>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/LUOGO"/>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/ENTE"/>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType/AUTH"/>
+            <Annotations Target="ZZ1_PATENTINO_CDS.ZZ1_PATENTINOType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="PATENTINO"/>
+                            <PropertyValue Property="ID" String="PATENTINO"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General Information"/>
+                                        <PropertyValue Property="ID" String="PATENTINOGeneralInformation"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Codice di riferimento"/>
+                                    <PropertyValue Property="Value" Path="CLIENTE"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Numero Riga"/>
+                                    <PropertyValue Property="Value" Path="CONTATORE"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Descrizione Cliente"/>
+                                    <PropertyValue Property="Value" Path="NOMECLIENTE"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Nome"/>
+                                    <PropertyValue Property="Value" Path="NOME"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Indirizzo"/>
+                                    <PropertyValue Property="Value" Path="INDIRIZZO"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Località"/>
+                                    <PropertyValue Property="Value" Path="LUOGO"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Ente"/>
+                                    <PropertyValue Property="Value" Path="ENTE"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Numero Autorizzazione"/>
+                                    <PropertyValue Property="Value" Path="AUTH"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Data di scadenza"/>
+                                    <PropertyValue Property="Value" Path="SCADENZA"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="PATENTINO"/>
+                        <PropertyValue Property="TypeNamePlural" String="PATENTINOs"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="CLIENTE"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Codice di riferimento"/>
+                            <PropertyValue Property="Value" Path="CLIENTE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Numero Riga"/>
+                            <PropertyValue Property="Value" Path="CONTATORE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Descrizione Cliente"/>
+                            <PropertyValue Property="Value" Path="NOMECLIENTE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Nome"/>
+                            <PropertyValue Property="Value" Path="NOME"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Indirizzo"/>
+                            <PropertyValue Property="Value" Path="INDIRIZZO"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Località"/>
+                            <PropertyValue Property="Value" Path="LUOGO"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ente"/>
+                            <PropertyValue Property="Value" Path="ENTE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Numero Autorizzazione"/>
+                            <PropertyValue Property="Value" Path="AUTH"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Data di scadenza"/>
+                            <PropertyValue Property="Value" Path="SCADENZA"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
