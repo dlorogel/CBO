@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zz1_percentualeacconto_cds/$metadata">
+        <edmx:Include Namespace="ZZ1_PERCENTUALEACCONTO_CDS" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zz1_percentualeacconto_cds_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZZ1_PERCENTUALEACCONTO_CDS.ZZ1_PERCENTUALEACCONTOType/SAP_UUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_PERCENTUALEACCONTO_CDS.ZZ1_PERCENTUALEACCONTOType/CodiceZona"/>
+            <Annotations Target="ZZ1_PERCENTUALEACCONTO_CDS.ZZ1_PERCENTUALEACCONTOType/CodiceSpecie"/>
+            <Annotations Target="ZZ1_PERCENTUALEACCONTO_CDS.ZZ1_PERCENTUALEACCONTOType/Varieta1"/>
+            <Annotations Target="ZZ1_PERCENTUALEACCONTO_CDS.ZZ1_PERCENTUALEACCONTOType/Caratteristica"/>
+            <Annotations Target="ZZ1_PERCENTUALEACCONTO_CDS.ZZ1_PERCENTUALEACCONTOType/Socio"/>
+            <Annotations Target="ZZ1_PERCENTUALEACCONTO_CDS.ZZ1_PERCENTUALEACCONTOType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Gestione Percentuale di Acconto"/>
+                            <PropertyValue Property="ID" String="PERCENTUALEACCONTO"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General Information"/>
+                                        <PropertyValue Property="ID" String="PERCENTUALEACCONTOGeneralInformation"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Codice Zona"/>
+                                    <PropertyValue Property="Value" Path="CodiceZona"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Codice Specie"/>
+                                    <PropertyValue Property="Value" Path="CodiceSpecie"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Varietàa"/>
+                                    <PropertyValue Property="Value" Path="Varieta1"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Caratteristica"/>
+                                    <PropertyValue Property="Value" Path="Caratteristica"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Socio"/>
+                                    <PropertyValue Property="Value" Path="Socio"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Inizio Validità"/>
+                                    <PropertyValue Property="Value" Path="InizioValidita"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Fine Validità"/>
+                                    <PropertyValue Property="Value" Path="FineValidita"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P01)"/>
+                                    <PropertyValue Property="Value" Path="P01"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P02)"/>
+                                    <PropertyValue Property="Value" Path="P02"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P03)"/>
+                                    <PropertyValue Property="Value" Path="P03"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P04)"/>
+                                    <PropertyValue Property="Value" Path="P04"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P05)"/>
+                                    <PropertyValue Property="Value" Path="P05"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P06)"/>
+                                    <PropertyValue Property="Value" Path="P06"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P07)"/>
+                                    <PropertyValue Property="Value" Path="P07"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P08)"/>
+                                    <PropertyValue Property="Value" Path="P08"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P09)"/>
+                                    <PropertyValue Property="Value" Path="P09"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P10)"/>
+                                    <PropertyValue Property="Value" Path="P10"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P11)"/>
+                                    <PropertyValue Property="Value" Path="P11"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P12)"/>
+                                    <PropertyValue Property="Value" Path="P12"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P13)"/>
+                                    <PropertyValue Property="Value" Path="P13"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P14)"/>
+                                    <PropertyValue Property="Value" Path="P14"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P15)"/>
+                                    <PropertyValue Property="Value" Path="P15"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P16)"/>
+                                    <PropertyValue Property="Value" Path="P16"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P17)"/>
+                                    <PropertyValue Property="Value" Path="P17"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P18)"/>
+                                    <PropertyValue Property="Value" Path="P18"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P19)"/>
+                                    <PropertyValue Property="Value" Path="P19"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentuale (P20)"/>
+                                    <PropertyValue Property="Value" Path="P20"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Gestione Percentuale di Acconto"/>
+                        <PropertyValue Property="TypeNamePlural" String="Gestione Percentuale di Acconto"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="CodiceZona"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Codice Zona"/>
+                            <PropertyValue Property="Value" Path="CodiceZona"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Codice Specie"/>
+                            <PropertyValue Property="Value" Path="CodiceSpecie"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Varietàa"/>
+                            <PropertyValue Property="Value" Path="Varieta1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Caratteristica"/>
+                            <PropertyValue Property="Value" Path="Caratteristica"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Socio"/>
+                            <PropertyValue Property="Value" Path="Socio"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Inizio Validità"/>
+                            <PropertyValue Property="Value" Path="InizioValidita"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Fine Validità"/>
+                            <PropertyValue Property="Value" Path="FineValidita"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P01)"/>
+                            <PropertyValue Property="Value" Path="P01"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P02)"/>
+                            <PropertyValue Property="Value" Path="P02"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P03)"/>
+                            <PropertyValue Property="Value" Path="P03"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P04)"/>
+                            <PropertyValue Property="Value" Path="P04"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P05)"/>
+                            <PropertyValue Property="Value" Path="P05"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P06)"/>
+                            <PropertyValue Property="Value" Path="P06"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P07)"/>
+                            <PropertyValue Property="Value" Path="P07"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P08)"/>
+                            <PropertyValue Property="Value" Path="P08"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P09)"/>
+                            <PropertyValue Property="Value" Path="P09"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P10)"/>
+                            <PropertyValue Property="Value" Path="P10"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P11)"/>
+                            <PropertyValue Property="Value" Path="P11"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P12)"/>
+                            <PropertyValue Property="Value" Path="P12"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P13)"/>
+                            <PropertyValue Property="Value" Path="P13"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P14)"/>
+                            <PropertyValue Property="Value" Path="P14"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P15)"/>
+                            <PropertyValue Property="Value" Path="P15"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P16)"/>
+                            <PropertyValue Property="Value" Path="P16"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P17)"/>
+                            <PropertyValue Property="Value" Path="P17"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P18)"/>
+                            <PropertyValue Property="Value" Path="P18"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P19)"/>
+                            <PropertyValue Property="Value" Path="P19"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentuale (P20)"/>
+                            <PropertyValue Property="Value" Path="P20"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
