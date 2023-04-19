@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FIORI_MENU')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zz1_salesagentcommisions01_cds/$metadata">
+        <edmx:Include Namespace="ZZ1_SALESAGENTCOMMISIONS01_CDS" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zz1_salesagentcommisions01_c_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/SAP_UUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/CompanyCode"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/BillingDocument"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/BillingPosition"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/CommissionType"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/ExternalSalesAgent"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/CommissionManagement"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/SalesManager"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/AreaManager"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/Customer"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/AccountingDocument"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/Material"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/ConditionContract"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/RevenueCalculation"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/DocumentNumber"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/FiscalYear"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/IncomingPaymentCalc"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/MonthPaymentCalc"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/YearPaymentCalc"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/Note"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/MaterialGroup"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type/Insoluto"/>
+            <Annotations Target="ZZ1_SALESAGENTCOMMISIONS01_CDS.ZZ1_SALESAGENTCOMMISIONS01Type">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Calculation Commission"/>
+                            <PropertyValue Property="ID" String="SALESAGENTCOMMISIONS01"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General Information"/>
+                                        <PropertyValue Property="ID" String="SALESAGENTCOMMISIONS01GeneralInformation"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Company Code"/>
+                                    <PropertyValue Property="Value" Path="CompanyCode"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Billing Document"/>
+                                    <PropertyValue Property="Value" Path="BillingDocument"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Billing Position"/>
+                                    <PropertyValue Property="Value" Path="BillingPosition"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Billing Date"/>
+                                    <PropertyValue Property="Value" Path="BillingDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Commission Type"/>
+                                    <PropertyValue Property="Value" Path="CommissionType"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="External Sales Agent"/>
+                                    <PropertyValue Property="Value" Path="ExternalSalesAgent"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Commission Management"/>
+                                    <PropertyValue Property="Value" Path="CommissionManagement"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Sales Manager"/>
+                                    <PropertyValue Property="Value" Path="SalesManager"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Area Manager"/>
+                                    <PropertyValue Property="Value" Path="AreaManager"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Document Reference ID"/>
+                                    <PropertyValue Property="Value" Path="DocumentReferenceID"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Customer"/>
+                                    <PropertyValue Property="Value" Path="Customer"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Accounting Document"/>
+                                    <PropertyValue Property="Value" Path="AccountingDocument"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Material"/>
+                                    <PropertyValue Property="Value" Path="Material"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Net Amount"/>
+                                    <PropertyValue Property="Value" Path="NetAmount_V"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Condition Contract"/>
+                                    <PropertyValue Property="Value" Path="ConditionContract"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Percentage"/>
+                                    <PropertyValue Property="Value" Path="Percentage_V"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Commission Amount"/>
+                                    <PropertyValue Property="Value" Path="CommissionAmount_V"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Revenue Calculation"/>
+                                    <PropertyValue Property="Value" Path="RevenueCalculation"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Creation Date"/>
+                                    <PropertyValue Property="Value" Path="CreationDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Document Number"/>
+                                    <PropertyValue Property="Value" Path="DocumentNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Fiscal Year"/>
+                                    <PropertyValue Property="Value" Path="FiscalYear"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Incoming Payment Calc"/>
+                                    <PropertyValue Property="Value" Path="IncomingPaymentCalc"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Month Payment Calc"/>
+                                    <PropertyValue Property="Value" Path="MonthPaymentCalc"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Year Payment Calc"/>
+                                    <PropertyValue Property="Value" Path="YearPaymentCalc"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Note"/>
+                                    <PropertyValue Property="Value" Path="Note"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Material Group"/>
+                                    <PropertyValue Property="Value" Path="MaterialGroup"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Insoluto"/>
+                                    <PropertyValue Property="Value" Path="Insoluto"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Calculation Commission"/>
+                        <PropertyValue Property="TypeNamePlural" String="Calculation Commissions"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="CompanyCode"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Company Code"/>
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Billing Document"/>
+                            <PropertyValue Property="Value" Path="BillingDocument"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Billing Position"/>
+                            <PropertyValue Property="Value" Path="BillingPosition"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Billing Date"/>
+                            <PropertyValue Property="Value" Path="BillingDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Commission Type"/>
+                            <PropertyValue Property="Value" Path="CommissionType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="External Sales Agent"/>
+                            <PropertyValue Property="Value" Path="ExternalSalesAgent"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Commission Management"/>
+                            <PropertyValue Property="Value" Path="CommissionManagement"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Sales Manager"/>
+                            <PropertyValue Property="Value" Path="SalesManager"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Area Manager"/>
+                            <PropertyValue Property="Value" Path="AreaManager"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Document Reference ID"/>
+                            <PropertyValue Property="Value" Path="DocumentReferenceID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Customer"/>
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Accounting Document"/>
+                            <PropertyValue Property="Value" Path="AccountingDocument"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material"/>
+                            <PropertyValue Property="Value" Path="Material"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Net Amount"/>
+                            <PropertyValue Property="Value" Path="NetAmount_V"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Condition Contract"/>
+                            <PropertyValue Property="Value" Path="ConditionContract"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Percentage"/>
+                            <PropertyValue Property="Value" Path="Percentage_V"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Commission Amount"/>
+                            <PropertyValue Property="Value" Path="CommissionAmount_V"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Revenue Calculation"/>
+                            <PropertyValue Property="Value" Path="RevenueCalculation"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Creation Date"/>
+                            <PropertyValue Property="Value" Path="CreationDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Document Number"/>
+                            <PropertyValue Property="Value" Path="DocumentNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Fiscal Year"/>
+                            <PropertyValue Property="Value" Path="FiscalYear"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Incoming Payment Calc"/>
+                            <PropertyValue Property="Value" Path="IncomingPaymentCalc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Month Payment Calc"/>
+                            <PropertyValue Property="Value" Path="MonthPaymentCalc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Year Payment Calc"/>
+                            <PropertyValue Property="Value" Path="YearPaymentCalc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Note"/>
+                            <PropertyValue Property="Value" Path="Note"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material Group"/>
+                            <PropertyValue Property="Value" Path="MaterialGroup"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Insoluto"/>
+                            <PropertyValue Property="Value" Path="Insoluto"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
