@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='FIORI_MENU')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZZ1_ZMAGGIORAZIONI_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_CurrencyType" sap:label="Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Currency"/>
+                </Key>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="Currency_Text" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="Currency_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Decimals" Type="Edm.Byte" sap:label="Decimal Places" sap:quickinfo="Number of decimal places"/>
+                <Property Name="CurrencyISOCode" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="ISO Code" sap:quickinfo="ISO Currency Code"/>
+                <Property Name="AlternativeCurrencyKey" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Alternative Key"/>
+                <Property Name="IsPrimaryCurrencyForISOCrcy" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Primary" sap:quickinfo="Primary SAP Currency Code for ISO Code"/>
+            </EntityType>
+            <EntityType Name="I_CurrencyTextType" sap:label="Currency Text" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                    <PropertyRef Name="Currency"/>
+                </Key>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="to_Language/Language_Text" sap:label="Language Key" sap:value-list="standard"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="to_Currency/Currency_Text" sap:label="Currency" sap:quickinfo="Currency Key" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="CurrencyName" Type="Edm.String" MaxLength="40" sap:label="Description"/>
+                <Property Name="CurrencyShortName" Type="Edm.String" MaxLength="15" sap:label="Short text"/>
+                <NavigationProperty Name="to_Currency" Relationship="ZZ1_ZMAGGIORAZIONI_CDS.assoc_953AD32A42F8CC110D2FDAB7C5274BF1" FromRole="FromRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1" ToRole="ToRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1"/>
+                <NavigationProperty Name="to_Language" Relationship="ZZ1_ZMAGGIORAZIONI_CDS.assoc_2FB7ED57453D0981D884820F302AC05F" FromRole="FromRole_assoc_2FB7ED57453D0981D884820F302AC05F" ToRole="ToRole_assoc_2FB7ED57453D0981D884820F302AC05F"/>
+            </EntityType>
+            <EntityType Name="I_LanguageType" sap:label="Language" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Language"/>
+                </Key>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="Language_Text" sap:label="Language Key"/>
+                <Property Name="Language_Text" Type="Edm.String" MaxLength="16" sap:label="Name" sap:quickinfo="Name of Language" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LanguageISOCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Language Code" sap:quickinfo="2-Character SAP Language Code"/>
+            </EntityType>
+            <EntityType Name="ZZ1_ZMAGGIORAZIONIType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SAP_UUID"/>
+                </Key>
+                <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="EKORG" Type="Edm.String" MaxLength="4" sap:label="Text of length 4" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZTIPLIST" Type="Edm.String" MaxLength="3" sap:label="Text of length 3" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZDAT_FROM" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label=""/>
+                <Property Name="ZDAT_TO" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label=""/>
+                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" sap:label="Text of length 10" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSPECIE" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Numeric length 3" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSTAG" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Numeric length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZVARIETA" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Numeric length 3" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZGRVARIETA" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Numeric length 4" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZCERTAZ" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Numeric length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZCERTPROD" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Numeric length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZRESIDUO" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Numeric length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZCERTIFCOM" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Numeric length 2" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSPECIFICA" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Numeric length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZLAVORAZIONE" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Numeric length 2" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZORIGINE" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Numeric length 2" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZQUALITA" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Numeric length 2" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZCALIBRAZIONE" Type="Edm.String" MaxLength="2" sap:label="Text of length 2" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZRAGGCAL" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Numeric length 2" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZPRZBASE_V" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="ZPRZBASE_C" sap:label=""/>
+                <Property Name="ZPRZBASE_C" Type="Edm.String" MaxLength="5" sap:text="ZPRZBASE_C_Text" sap:label="" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="ZPRZBASE_C_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ZUM" Type="Edm.String" MaxLength="5" sap:label="Text of length 5" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZEVCOLT" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZRACTAG" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSERCAR" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSERRACTAG" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSERASTC" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSERDEP" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSERCAL" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSER1" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSER2" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSER3" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSER4" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZSER5" Type="Edm.String" MaxLength="1" sap:label="Text of length 1" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZRAGGLIQ" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Numeric length 4" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZOP" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Numeric length 3" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZMARKUP_V" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="ZMARKUP_C" sap:label=""/>
+                <Property Name="ZMARKUP_C" Type="Edm.String" MaxLength="5" sap:text="ZMARKUP_C_Text" sap:label="" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="ZMARKUP_C_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MATNR" Type="Edm.String" MaxLength="40" sap:label="Text of length 40" sap:heading="" sap:quickinfo=""/>
+                <Property Name="ZMAGG1" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG2" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG3" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG4" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG6" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG5" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG7" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG8" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG9" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <Property Name="ZMAGG10" Type="Edm.Decimal" Precision="7" Scale="4" sap:label=""/>
+                <NavigationProperty Name="to_ZMARKUP" Relationship="ZZ1_ZMAGGIORAZIONI_CDS.assoc_654808AA430BB3D31BF50376F15F326E" FromRole="FromRole_assoc_654808AA430BB3D31BF50376F15F326E" ToRole="ToRole_assoc_654808AA430BB3D31BF50376F15F326E"/>
+                <NavigationProperty Name="to_ZPRZBASE" Relationship="ZZ1_ZMAGGIORAZIONI_CDS.assoc_C5CCCDED214F4E947503A3CFFD69C757" FromRole="FromRole_assoc_C5CCCDED214F4E947503A3CFFD69C757" ToRole="ToRole_assoc_C5CCCDED214F4E947503A3CFFD69C757"/>
+                <NavigationProperty Name="to__ZMARKUP" Relationship="ZZ1_ZMAGGIORAZIONI_CDS.assoc_563C3DFD8781D86706298148058737C6" FromRole="FromRole_assoc_563C3DFD8781D86706298148058737C6" ToRole="ToRole_assoc_563C3DFD8781D86706298148058737C6"/>
+                <NavigationProperty Name="to__ZPRZBASE" Relationship="ZZ1_ZMAGGIORAZIONI_CDS.assoc_77A576487F7EBD32DC99337915B0C9D8" FromRole="FromRole_assoc_77A576487F7EBD32DC99337915B0C9D8" ToRole="ToRole_assoc_77A576487F7EBD32DC99337915B0C9D8"/>
+            </EntityType>
+            <Association Name="assoc_2FB7ED57453D0981D884820F302AC05F" sap:content-version="1">
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyTextType" Multiplicity="1" Role="FromRole_assoc_2FB7ED57453D0981D884820F302AC05F"/>
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_LanguageType" Multiplicity="0..1" Role="ToRole_assoc_2FB7ED57453D0981D884820F302AC05F"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_2FB7ED57453D0981D884820F302AC05F">
+                        <PropertyRef Name="Language"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_2FB7ED57453D0981D884820F302AC05F">
+                        <PropertyRef Name="Language"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_953AD32A42F8CC110D2FDAB7C5274BF1" sap:content-version="1">
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyTextType" Multiplicity="1" Role="FromRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1"/>
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyType" Multiplicity="1" Role="ToRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1">
+                        <PropertyRef Name="Currency"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1">
+                        <PropertyRef Name="Currency"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_654808AA430BB3D31BF50376F15F326E" sap:content-version="1">
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType" Multiplicity="1" Role="FromRole_assoc_654808AA430BB3D31BF50376F15F326E"/>
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyType" Multiplicity="0..1" Role="ToRole_assoc_654808AA430BB3D31BF50376F15F326E"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_654808AA430BB3D31BF50376F15F326E">
+                        <PropertyRef Name="Currency"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_654808AA430BB3D31BF50376F15F326E">
+                        <PropertyRef Name="ZMARKUP_C"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_C5CCCDED214F4E947503A3CFFD69C757" sap:content-version="1">
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType" Multiplicity="1" Role="FromRole_assoc_C5CCCDED214F4E947503A3CFFD69C757"/>
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyType" Multiplicity="0..1" Role="ToRole_assoc_C5CCCDED214F4E947503A3CFFD69C757"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_C5CCCDED214F4E947503A3CFFD69C757">
+                        <PropertyRef Name="Currency"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_C5CCCDED214F4E947503A3CFFD69C757">
+                        <PropertyRef Name="ZPRZBASE_C"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_563C3DFD8781D86706298148058737C6" sap:content-version="1">
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType" Multiplicity="1" Role="FromRole_assoc_563C3DFD8781D86706298148058737C6"/>
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyTextType" Multiplicity="*" Role="ToRole_assoc_563C3DFD8781D86706298148058737C6"/>
+            </Association>
+            <Association Name="assoc_77A576487F7EBD32DC99337915B0C9D8" sap:content-version="1">
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType" Multiplicity="1" Role="FromRole_assoc_77A576487F7EBD32DC99337915B0C9D8"/>
+                <End Type="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyTextType" Multiplicity="*" Role="ToRole_assoc_77A576487F7EBD32DC99337915B0C9D8"/>
+            </Association>
+            <EntityContainer Name="ZZ1_ZMAGGIORAZIONI_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_Currency" EntityType="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_CurrencyText" EntityType="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyTextType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_Language" EntityType="ZZ1_ZMAGGIORAZIONI_CDS.I_LanguageType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZZ1_ZMAGGIORAZIONI" EntityType="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_77A576487F7EBD32DC99337915B0C9D8" Association="ZZ1_ZMAGGIORAZIONI_CDS.assoc_77A576487F7EBD32DC99337915B0C9D8" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZZ1_ZMAGGIORAZIONI" Role="FromRole_assoc_77A576487F7EBD32DC99337915B0C9D8"/>
+                    <End EntitySet="I_CurrencyText" Role="ToRole_assoc_77A576487F7EBD32DC99337915B0C9D8"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_563C3DFD8781D86706298148058737C6" Association="ZZ1_ZMAGGIORAZIONI_CDS.assoc_563C3DFD8781D86706298148058737C6" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZZ1_ZMAGGIORAZIONI" Role="FromRole_assoc_563C3DFD8781D86706298148058737C6"/>
+                    <End EntitySet="I_CurrencyText" Role="ToRole_assoc_563C3DFD8781D86706298148058737C6"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_2FB7ED57453D0981D884820F302AC05F" Association="ZZ1_ZMAGGIORAZIONI_CDS.assoc_2FB7ED57453D0981D884820F302AC05F" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_CurrencyText" Role="FromRole_assoc_2FB7ED57453D0981D884820F302AC05F"/>
+                    <End EntitySet="I_Language" Role="ToRole_assoc_2FB7ED57453D0981D884820F302AC05F"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_C5CCCDED214F4E947503A3CFFD69C757" Association="ZZ1_ZMAGGIORAZIONI_CDS.assoc_C5CCCDED214F4E947503A3CFFD69C757" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZZ1_ZMAGGIORAZIONI" Role="FromRole_assoc_C5CCCDED214F4E947503A3CFFD69C757"/>
+                    <End EntitySet="I_Currency" Role="ToRole_assoc_C5CCCDED214F4E947503A3CFFD69C757"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_953AD32A42F8CC110D2FDAB7C5274BF1" Association="ZZ1_ZMAGGIORAZIONI_CDS.assoc_953AD32A42F8CC110D2FDAB7C5274BF1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="I_CurrencyText" Role="FromRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1"/>
+                    <End EntitySet="I_Currency" Role="ToRole_assoc_953AD32A42F8CC110D2FDAB7C5274BF1"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_654808AA430BB3D31BF50376F15F326E" Association="ZZ1_ZMAGGIORAZIONI_CDS.assoc_654808AA430BB3D31BF50376F15F326E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZZ1_ZMAGGIORAZIONI" Role="FromRole_assoc_654808AA430BB3D31BF50376F15F326E"/>
+                    <End EntitySet="I_Currency" Role="ToRole_assoc_654808AA430BB3D31BF50376F15F326E"/>
+                </AssociationSet>
+                <FunctionImport Name="ZZ1_ZMAGGIORAZIONISap_upsert" ReturnType="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType" EntitySet="ZZ1_ZMAGGIORAZIONI" m:HttpMethod="POST">
+                    <Parameter Name="EKORG" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="ZTIPLIST" Type="Edm.String" Mode="In" MaxLength="3"/>
+                    <Parameter Name="ZDAT_FROM" Type="Edm.DateTime" Mode="In" Precision="0"/>
+                    <Parameter Name="ZDAT_TO" Type="Edm.DateTime" Mode="In" Precision="0"/>
+                    <Parameter Name="LIFNR" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="ZSPECIE" Type="Edm.String" Mode="In" MaxLength="3"/>
+                    <Parameter Name="ZSTAG" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZVARIETA" Type="Edm.String" Mode="In" MaxLength="3"/>
+                    <Parameter Name="ZGRVARIETA" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="ZCERTAZ" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZCERTPROD" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZRESIDUO" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZCERTIFCOM" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="ZSPECIFICA" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZLAVORAZIONE" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="ZORIGINE" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="ZQUALITA" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="ZCALIBRAZIONE" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="ZRAGGCAL" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="ZPRZBASE_V" Type="Edm.Decimal" Mode="In" Precision="16" Scale="3"/>
+                    <Parameter Name="ZPRZBASE_C" Type="Edm.String" Mode="In" MaxLength="5"/>
+                    <Parameter Name="ZUM" Type="Edm.String" Mode="In" MaxLength="5"/>
+                    <Parameter Name="ZEVCOLT" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZRACTAG" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSERCAR" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSERRACTAG" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSERASTC" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSERDEP" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSERCAL" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSER1" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSER2" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSER3" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSER4" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZSER5" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="ZRAGGLIQ" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="ZOP" Type="Edm.String" Mode="In" MaxLength="3"/>
+                    <Parameter Name="ZMARKUP_V" Type="Edm.Decimal" Mode="In" Precision="16" Scale="3"/>
+                    <Parameter Name="ZMARKUP_C" Type="Edm.String" Mode="In" MaxLength="5"/>
+                    <Parameter Name="MATNR" Type="Edm.String" Mode="In" MaxLength="40"/>
+                    <Parameter Name="ZMAGG1" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG2" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG3" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG4" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG6" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG5" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG7" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG8" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG9" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                    <Parameter Name="ZMAGG10" Type="Edm.Decimal" Mode="In" Precision="7" Scale="4"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyTextType/Language" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Language"/>
+                        <PropertyValue Property="CollectionPath" String="I_Language"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Language"/>
+                                    <PropertyValue Property="ValueListProperty" String="Language"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Language_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyTextType/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Currency"/>
+                        <PropertyValue Property="CollectionPath" String="I_Currency"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Currency"/>
+                                    <PropertyValue Property="ValueListProperty" String="Currency"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Currency_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZPRZBASE_C" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Currency"/>
+                        <PropertyValue Property="CollectionPath" String="I_Currency"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ZPRZBASE_C"/>
+                                    <PropertyValue Property="ValueListProperty" String="Currency"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Currency_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZMARKUP_C" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Currency"/>
+                        <PropertyValue Property="CollectionPath" String="I_Currency"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ZMARKUP_C"/>
+                                    <PropertyValue Property="ValueListProperty" String="Currency"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Currency_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONI_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/EKORG" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZCALIBRAZIONE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZCERTAZ" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZCERTIFCOM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZCERTPROD" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZDAT_FROM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZDAT_TO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZLAVORAZIONE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZORIGINE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZQUALITA" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZRAGGCAL" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZRESIDUO" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZSPECIE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZSPECIFICA" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZSTAG" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZTIPLIST" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType/ZVARIETA" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.ZZ1_ZMAGGIORAZIONIType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ZRAGGCAL</PropertyPath>
+                        <PropertyPath>ZCALIBRAZIONE</PropertyPath>
+                        <PropertyPath>ZQUALITA</PropertyPath>
+                        <PropertyPath>ZORIGINE</PropertyPath>
+                        <PropertyPath>ZLAVORAZIONE</PropertyPath>
+                        <PropertyPath>ZSPECIFICA</PropertyPath>
+                        <PropertyPath>ZCERTIFCOM</PropertyPath>
+                        <PropertyPath>ZRESIDUO</PropertyPath>
+                        <PropertyPath>ZCERTPROD</PropertyPath>
+                        <PropertyPath>ZCERTAZ</PropertyPath>
+                        <PropertyPath>ZVARIETA</PropertyPath>
+                        <PropertyPath>ZSTAG</PropertyPath>
+                        <PropertyPath>ZSPECIE</PropertyPath>
+                        <PropertyPath>ZDAT_TO</PropertyPath>
+                        <PropertyPath>ZDAT_FROM</PropertyPath>
+                        <PropertyPath>ZTIPLIST</PropertyPath>
+                        <PropertyPath>EKORG</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_ZMAGGIORAZIONI_CDS.I_CurrencyType/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.UnitSpecificScale" Path="Decimals"/>
+            </Annotations>
+            <atom:link rel="self" href="http://orogeldev:44333/sap/opu/odata/sap/ZZ1_ZMAGGIORAZIONI_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://orogeldev:44333/sap/opu/odata/sap/ZZ1_ZMAGGIORAZIONI_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
