@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://orogeldev:44333/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZZ1_CONTI_PROVVIGIONI_CDS" xml:lang="it" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZZ1_CONTI_PROVVIGIONIType" sap:label="CONTI_PROVVIGIONI" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SAP_UUID"/>
+                </Key>
+                <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="TIPOLOGIADOCUMENTOFI" Type="Edm.String" MaxLength="20" sap:label="TIPOLOGIA DOCUMENTO FI"/>
+                <Property Name="TIPODOCUMENTOINSOLUTI" Type="Edm.String" MaxLength="20" sap:label="TIPO DOCUMENTO INSOLUTI"/>
+                <Property Name="CONTODARECALCOLOPROVV1" Type="Edm.String" MaxLength="10" sap:label="CONTO DARE CALCOLO PROVV1"/>
+                <Property Name="CONTOAVERECALCOLOPROVV1" Type="Edm.String" MaxLength="10" sap:label="CONTO AVERE CALCOLO PROVV1"/>
+                <Property Name="CONTODARECALCOLOPROVV2" Type="Edm.String" MaxLength="10" sap:label="CONTO DARE CALCOLO PROVV2"/>
+                <Property Name="CONTOAVERECALCOLOPROVV2" Type="Edm.String" MaxLength="10" sap:label="CONTO AVERE CALCOLO PROVV2"/>
+                <Property Name="CONTODAREENASARCO1" Type="Edm.String" MaxLength="10" sap:label="CONTO DARE ENASARCO1"/>
+                <Property Name="CONTODAREENASARCO2" Type="Edm.String" MaxLength="10" sap:label="CONTO DARE ENASARCO2"/>
+                <Property Name="CONTOAVEREENASARCO" Type="Edm.String" MaxLength="10" sap:label="CONTO AVERE ENASARCO"/>
+                <Property Name="CONTODAREENASARCOMINIMALE" Type="Edm.String" MaxLength="10" sap:label="CONTO DARE ENASARCO MINIMALE"/>
+                <Property Name="CONTOAVEREENASARCOMINIMALE" Type="Edm.String" MaxLength="10" sap:label="CONTO AVERE ENASARCO MINIMALE"/>
+                <Property Name="CONTODAREFIRR" Type="Edm.String" MaxLength="10" sap:label="CONTO DARE FIRR"/>
+                <Property Name="CONTOAVEREFIRR" Type="Edm.String" MaxLength="10" sap:label="CONTO AVERE FIRR"/>
+                <Property Name="CONTODAREFISC" Type="Edm.String" MaxLength="10" sap:label="CONTO DARE FISC"/>
+                <Property Name="CONTOAVEREFISC" Type="Edm.String" MaxLength="10" sap:label="CONTO AVERE FISC"/>
+            </EntityType>
+            <EntityContainer Name="ZZ1_CONTI_PROVVIGIONI_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZZ1_CONTI_PROVVIGIONI" EntityType="ZZ1_CONTI_PROVVIGIONI_CDS.ZZ1_CONTI_PROVVIGIONIType" sap:searchable="true" sap:content-version="1"/>
+                <FunctionImport Name="ZZ1_CONTI_PROVVIGIONISap_upsert" ReturnType="ZZ1_CONTI_PROVVIGIONI_CDS.ZZ1_CONTI_PROVVIGIONIType" EntitySet="ZZ1_CONTI_PROVVIGIONI" m:HttpMethod="POST">
+                    <Parameter Name="TIPOLOGIADOCUMENTOFI" Type="Edm.String" Mode="In" MaxLength="20"/>
+                    <Parameter Name="TIPODOCUMENTOINSOLUTI" Type="Edm.String" Mode="In" MaxLength="20"/>
+                    <Parameter Name="CONTODARECALCOLOPROVV1" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTOAVERECALCOLOPROVV1" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTODARECALCOLOPROVV2" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTOAVERECALCOLOPROVV2" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTODAREENASARCO1" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTODAREENASARCO2" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTOAVEREENASARCO" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTODAREENASARCOMINIMALE" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTOAVEREENASARCOMINIMALE" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTODAREFIRR" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTOAVEREFIRR" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTODAREFISC" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="CONTOAVEREFISC" Type="Edm.String" Mode="In" MaxLength="10"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZZ1_CONTI_PROVVIGIONI_CDS.ZZ1_CONTI_PROVVIGIONI_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_CONTI_PROVVIGIONI_CDS.ZZ1_CONTI_PROVVIGIONIType/TIPOLOGIADOCUMENTOFI" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_CONTI_PROVVIGIONI_CDS.ZZ1_CONTI_PROVVIGIONIType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>TIPOLOGIADOCUMENTOFI</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://orogeldev:44333/sap/opu/odata/sap/ZZ1_CONTI_PROVVIGIONI_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://orogeldev:44333/sap/opu/odata/sap/ZZ1_CONTI_PROVVIGIONI_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
